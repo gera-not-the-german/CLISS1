@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let y=parseFloat(prompt("number in years"));
+
+        let d=Math.floor(y*365);
+        let h=Math.floor((y*8760) % 24);
+        let m=Math.floor((y*525600) % 60);
+        let s=Math.floor((y*31536000) % 60);
+
+        alert(d+" days "+h+" hours "+m+" minutes "+s+" seconds ");
+
+    </script>
+</body>
+</html>
