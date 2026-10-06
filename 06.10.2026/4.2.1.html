@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Exercise 4.2.1</title>
+    </head>
+    <body>
+        <img id="fox" src="Pictures/Fox.png" style="position:absolute;">
+        <button onclick="hide()"> Hide</button>
+        <button onclick="show()"> Show</button>
+        <script>
+            //1) Ask the user for the dimensions
+            let useraskW=parseFloat(prompt("width? in px"));
+            let useraskH=parseFloat(prompt("Height? in px"));
+            //change the width & height of fox accordingly
+            document.getElementById("fox").style.width=useraskW+"px";
+            document.getElementById("fox").style.height=useraskH+"px";
+            //2) change the position of the fox to the top right
+            document.getElementById("fox").style.right=0+"px";
+            document.getElementById("fox").style.position=top;
+            //3) Ask the user for the background color
+            let bg=prompt("input a valid option for bg colour");
+            document.body.style.backgroundColor=bg;
+            //change the background of the image
+            document.getElementById("fox").style.backgroundColor="green";
+            //4)function to let the fox dissapear
+            function hide()
+            {
+                //code here to let the fox disappear
+                //...
+                document.getElementById("fox").style.visibility="hidden";
+            }
+
+            //5)create a second function to make the fox visible again
+            function show()
+            {
+                //code here to let the fox disappear
+                //...
+                document.getElementById("fox").style.visibility="visible";
+            }
+
+
+
+        </script>
+    </body>
+</html>
