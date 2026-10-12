@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+    <title>Exercise 3.8.2 </title>
+    <meta charset="UTF-8">
+    </head>
+    <body>
+        <h2>Calculator</h2>
+        <img src="./Pictures/Fox.png" id="imageShape" width="200" height="200">
+        <p id="calcText">fih</p>
+        <script>
+        //user input for shape type
+        let shape = prompt("What is the shape you want to calculate the surface?")
+        //
+        if(shape=="rectangle"){
+        let w=parseFloat(prompt("width?"));
+        let h=parseFloat(prompt("height?"));
+        let area=h*w;
+        document.getElementById("calcText").innerHTML = "A = 2 * l + 2 * w="+area;
+        document.getElementById("calcText").style.color = "red";
+        document.getElementById("imageShape").src = "./Pictures/Rectangle_Perimeter.png";
+        }
+        else{
+        let r=parseFloat(prompt("radius?"));
+        let pi=Math.PI;
+        let carea=pi*(r**2);
+        document.getElementById("calcText").innerHTML = "A = 2 * PI * r="+carea;
+        document.getElementById("calcText").style.color = "blue";
+        document.getElementById("imageShape").src = "./Pictures/Circle_Perimeter.png";
+        }
+        </script>
+    </body>
+</html>

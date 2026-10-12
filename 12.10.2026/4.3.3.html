@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang=en>
+    <title>4.3.3 Exercise</title>
+    <meta charset="UTF-8">
+    <body>
+        <div id = "div">
+            <p id = "paragraph">Here is a paragraph.</p>
+        </div>
+        <button id="myButton">Change layout</button>
+        <script>
+        myButton.addEventListener("click",changeLayout); 
+        function changeLayout() {
+        document.getElementById("paragraph").style.backgroundColor = "red";
+        document.getElementById("paragraph").style.fontSize = "30";
+        document.getElementById("paragraph").style.color = "white";
+        document.getElementById("paragraph").style.border = "3px solid blue";
+        }
+        </script>
+    </body>
+</html>
+
+
