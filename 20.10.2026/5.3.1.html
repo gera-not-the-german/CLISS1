@@ -10,9 +10,15 @@
         let one = parseInt(prompt("number"));
         let two = parseInt(prompt("number"));
         let three = parseInt(prompt("number"));
-
-        alert("largest one "+Math.max(one, two, three));
-        alert("ascending "+Math.)
+        let array = [one, two, three];
+        let max = Math.max(one, two, three);
+        alert("largest one "+max);
+        alert("ascending "+array.sort());
+        if ( max >= 30) {
+            alert("good enough");
+        } else {
+            alert("fuh naw twin ts is not is vro");
+        }
     </script>
 </body>
 </html>
