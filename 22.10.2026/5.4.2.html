@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>this is a speed calculator</p>
+    <p>remaining time: <span id="remaining">0</span> minutes</p>
+    <script>
+        let w = parseFloat(prompt("weight in MB"));
+        let s = parseFloat(prompt("speed in mbitps"));
+
+        let remaining = w/8/s;
+        if (remaining < 60){
+            document.getElementById("remaining").innerHTML = remaining;
+            document.getElementById("remaining").style.color = "green";
+        }
+        else{
+            document.getElementById("remaining").innerHTML = remaining;
+            document.getElementById("remaining").style.color = "blue";
+        };
+    </script>
+</body>
+</html>
