@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>quiz</h2>
+    <script>
+        let pt = 0;
+
+        for (let t = 0; t < 5; t++) {
+        let rng1 = Math.floor(Math.random()*100+1);
+        let rng2 = Math.floor(Math.random()*100+1);
+        let ans = rng1 + rng2;
+        console.log(ans);
+        if (parseInt(prompt("whats "+rng1+" + "+rng2+" ?")) == ans){pt++;}
+        console.log(pt);
+        };
+
+        if (pt == 0){alert("You should definitely practice more your math skills")}
+        else if (pt == 1 || pt == 2){alert("Not bad, but there is still space for improvement")}
+        else if (pt == 3 || pt == 4){alert("Well done, you reached a good score")}
+        else if (pt == 5){alert("Amazing you have achieved the highest possible score")}
+    </script>
+</body>
+</html>

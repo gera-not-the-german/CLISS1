@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>dice</h2>
+    <img id="imgdice1" src="./Dice_Pics/Dice_1.png" alt="">
+    <img id="imgdice2" src="./Dice_Pics/Dice_1.png" alt="">
+    <p id="sumpar">sum is</p>
+    <script>
+        let dice1 = Math.floor(Math.random()*6+1);
+        let img1 = "./Dice_Pics/Dice_"+dice1+".png"
+        document.getElementById("imgdice1").src = img1;
+
+        let dice2 = Math.floor(Math.random()*6+1);
+        let img2 = "./Dice_Pics/Dice_"+dice2+".png"
+        document.getElementById("imgdice2").src = img2;
+
+        let sum = dice1 + dice2;
+        document.getElementById("sumpar").innerHTML = "sum is "+sum;
+    </script>
+</body>
+</html> 
