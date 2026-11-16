@@ -40,35 +40,38 @@
 
     <script>
         //start coding here
-        let numInput = document.getElementById("numInput").value;
+        
         let pressed = 0;
-
-        let dblBtn = document.getElementById("dblBtn");
-        dblBtn.addEventListener("click", double);
+        let resultnum = 0;
+        
+        dblBtn.addEventListener("click", double)
 
         console.log(numInput);
         console.log(pressed);
-        console.log(result);
+        console.log(resultnum);
 
         function double(){
             if(pressed == 0){
-                let result = numInput*2;
+                let numInput = document.getElementById("numInput").value;
+                resultnum = parseFloat(numInput*2);
                 pressed = pressed+1;
-                console.log(result);
-                console.log(pressed);
+                document.getElementById("result").innerHTML = "Result: "+resultnum;
             }
             else{
-                result = result*2;  
-                console.log(result); 
-                console.log(pressed);             
+                resultnum = parseFloat(resultnum*2);      
+                document.getElementById("result").innerHTML = "Result: "+resultnum;      
             }
         };
 
-        console.log(numInput);
-        console.log(pressed);
-        console.log(result);
+        resetBtn.addEventListener("click", reset);
 
-        document.getElementById("result").innerHTML = "Result: "+result;
+        function reset(){
+            resultnum = 0;
+            pressed = 0;
+
+        };
+
+        
     </script>
 
 </body>
