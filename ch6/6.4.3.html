@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>1st number</p>
+    <input type="number" id="in1">
+    <p>2nd number</p>
+    <input type="number" id="in2">
+    <br>
+    <button type="button" id="mul">multiply</button>
+    <button type="button" id="div">divide</button>
+    <p id="result">the result is: 0</p>
+    <script>
+        mul.addEventListener("click",mulFN);
+        div.addEventListener("click",divFN);
+
+        function mulFN(){
+            let x = document.getElementById("in1").value;
+            let y = document.getElementById("in2").value;
+            let resultvar = x*y;
+            document.getElementById("result").innerHTML = "the result is: "+resultvar;
+        };
+
+        function divFN(){
+            let x = document.getElementById("in1").value;
+            let y = document.getElementById("in2").value;
+            let resultvar = x/y;
+            if(resultvar != "Infinity"){
+                document.getElementById("result").innerHTML = "the result is: "+resultvar;
+            }
+            else{
+                alert("Error: Number cannot be divided by 0")
+            };
+        };
+    </script>
+</body>
+</html>
