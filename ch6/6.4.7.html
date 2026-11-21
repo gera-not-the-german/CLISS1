@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Key Events Task</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: gray;
+            margin: 50px auto;
+        }
+
+        #info {
+            text-align: center;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<h2 style="text-align:center;">Control the Box with Your Keyboard</h2>
+
+<div id="box"></div>
+<p id="info">Last key pressed: none</p>
+
+<script>
+    function init(){
+        document.addEventListener("keydown", colour_keydown);
+        document.addEventListener("keyup", colour_keyup);
+    }
+
+    let sizecur = 100;
+    let lastkey = "none";
+
+    //key down
+    
+
+    function colour_keydown(e){
+        if(e.key === "b"){
+            document.getElementById("box").style.cssText = "margin: 50px auto; background-color: blue; width: "+sizecur+"px; height: "+sizecur+"px;"
+        }
+        else if(e.key === "y"){
+            document.getElementById("box").style.cssText = "margin: 50px auto; background-color: yellow; width: "+sizecur+"px; height: "+sizecur+"px;"
+        }
+        else if(e.key === "p"){
+            document.getElementById("box").style.cssText = "margin: 50px auto; background-color: purple; width: "+sizecur+"px; height: "+sizecur+"px;"
+        }
+        else if(e.key === "ArrowUp"){
+            sizecur++
+            document.getElementById("box").style.cssText = "margin: 50px auto; width: "+sizecur+"px; height: "+sizecur+"px;"
+        }
+        else if(e.key === "ArrowDown"){
+            sizecur--
+            document.getElementById("box").style.cssText = "margin: 50px auto; width: "+sizecur+"px; height: "+sizecur+"px;"
+        }
+
+        else if(e.key === "r"){
+            sizecur--
+            document.getElementById("box").style.cssText = "margin: 50px auto; width: "+100+"px; height: "+100+"px;"
+        }
+        lastkey = event.key;
+        document.getElementById("info").innerText = "Last key pressed: "+lastkey;
+    }
+
+    //key up
+    function colour_keyup(e){
+        if(e.key === "b"){
+            document.getElementById("box").style.cssText = "margin: 50px auto; background-color: grey; width: "+sizecur+"px; height: "+sizecur+"px;"
+        }
+        else if(e.key === "y"){
+            document.getElementById("box").style.cssText = "margin: 50px auto; background-color: grey; width: "+sizecur+"px; height: "+sizecur+"px;"
+        }
+        else if(e.key === "p"){
+            document.getElementById("box").style.cssText = "margin: 50px auto; background-color: grey; width: "+sizecur+"px; height: "+sizecur+"px;"
+        }
+    }
+
+
+
+
+    addEventListener("load", init)
+</script>
+
+</body>
+</html>

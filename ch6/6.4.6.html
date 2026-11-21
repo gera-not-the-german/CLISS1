@@ -4,41 +4,47 @@
 		<title>Exercise 6.4.6 Monkey</title>
 		<meta charset=UTF-8>
 	<body>
-		<button id="buttonLeft"><</button>
-		<button id="buttonRight">></button>
-		<button id="buttonUp">^</button>
-		<button id="buttonDown">v</button>
+		<input type="number" id="in">
+		<button type="button" id="submit">submit</button>
 		<img src="./pictures/gorilla236x256.png" id="gorillaImage">
 		<script>
 			'use strict';
 
 			let gorilla;
+			let speed;
 
 			function init(){
 				gorilla = document.getElementById('gorillaImage');
 				document.addEventListener("keydown", move);
 				gorilla.style.cssText = "position: relative; top: 0; left: 0";
+
+				submit.addEventListener("click", speedfn);
+			}
+
+			function speedfn(){
+				speed = document.getElementById("in").value;
+				console.log("speedfn");
 			}
 
 			function move(e){
-                if(e.key === "a"){
+                if(e.key === "d"){
 				const x = parseInt(gorilla.style.left);
-				gorilla.style.left = x + 10 + 'px';
+				gorilla.style.left = x + speed + 'px';
                 }
 
                 else if(e.key === "a"){
 				const x = parseInt(gorilla.style.left);
-				gorilla.style.left = x - 10 + 'px';
+				gorilla.style.left = x - speed + 'px';
                 }
 
-                else if(e.key === "a"){
+                else if(e.key === "w"){
 				const y = parseInt(gorilla.style.top);
-				gorilla.style.top = y - 10 + 'px';
+				gorilla.style.top = y - speed + 'px';
                 }
 
-                else if(e.key === "a"){
+                else if(e.key === "s"){
 				const y = parseInt(gorilla.style.top);
-				gorilla.style.top = y + 10 + 'px';
+				gorilla.style.top = y + speed + 'px';
                 }
                 
             }
