@@ -15,7 +15,30 @@
             <span id = "result"></span>
             </p>
         <script>
-           //start coding here
+           let a;
+           let b;
+
+           function gcd(){
+                let a = document.getElementById("firstNumber").value;
+                let b = document.getElementById("secondNumber").value;
+
+                if(a>b){
+                    for(i=a;i>0;i++){
+                        let atry = a%i;
+                        let btry = b%i;
+                        console.log(atry);
+                        console.log(btry);
+                    }
+                }
+                else if(b>a){
+
+                }
+                else{
+                    
+                }
+           }
+
+
         </script>
     </body>
 </html>

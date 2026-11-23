@@ -1,11 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+</html lang=en>
+    <head>
+    <title>Exercise 7.3.7 GCD </title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+    </head>
+    <body>
+        <h1>Greatest Common Divisor</h1>
+        <form>
+            1st Number : <input type="number" id="firstNumber" /><br>
+            2nd Number: <input type="number" id="secondNumber" /><br>
+            <input type="button" onClick="gcd()" Value="Commpute gcd" />
+            </form>
+            <p>The greatest common divisior is : <br>
+            <span id = "result"></span>
+            </p>
+        <script>
+           let a;
+           let b;
+
+           function gcd(){
+                let a = document.getElementById("firstNumber").value;
+                let b = document.getElementById("secondNumber").value;
+
+                if(a>b && b>=0){
+                    for(i=a;i>0;i--){          
+                        if(a%i===0 && b%i===0){
+                            document.getElementById("result").innerText = "gcd is: "+i;
+                            break;
+                        }
+                    }
+                }
+                else if(b>a && a>=0){
+                    for(i=b;i>0;i--){          
+                        if(a%i===0 && b%i===0){
+                            document.getElementById("result").innerText = "gcd is: "+i;
+                            break;
+                        }
+                    }
+                }
+                else{
+                    document.getElementById("result").innerText = "error";
+                }
+           }
+
+        </script>
+    </body>
 </html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+</html lang=en>
+
+<head>
+    <title>Exercise 7.3.8 Chessboard </title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <h1>Create Grid</h1>
+    <form>
+        Height : <input type="number" id="gridHeight" /><br>
+        Width: <input type="number" id="gridWidth" /><br>
+        <input type="button" onClick="createGrid()" Value="Create Grid" />
+    </form>
+    <script>
+        let h;
+        let w;
+        
+
+        function createGrid() {
+            h = document.getElementById("gridHeight").value
+            w = document.getElementById("gridWidth").value
+
+            let out = "";
+
+            for (i1=h;i1>0;i1--) {
+
+
+                let fnout = "";
+                for (i2=w;i2>0;i2--) {
+                    if(i2%2===0) {
+                        fnout = fnout+"#";
+                    }
+                    else if(i2%2!=0) {
+                        fnout = fnout+" ";
+                    }
+                }
+
+                if(i1%2===0){
+                    out = out+" "+fnout+"\n";
+                }
+                else if(i1%2!=0){
+                    out = out+fnout+"\n";
+                }
+                
+            }
+
+            console.log(out);
+        }
+    </script>
+</body>
+
+</html>
