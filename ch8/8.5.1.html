@@ -29,8 +29,20 @@
         calculateButton.addEventListener("click", calculateTotalSongDuration);
         function calculateTotalSongDuration()
         {
-            //write in here your code
+            let out = 0;
+
+            let selectedValues=itemList.selectedOptions; //cuz it makes an array and latuh we get i form the array
+
+            for(let i=0;i<selectedValues.length;i++){
+                out = out+parseFloat(selectedValues[i].value);
+                
+            }
+            document.getElementById("result").innerText = "its this many secs: "+out;
         }
+
+
+
+        //let selectedOption=itemList.options[i].value;
         //https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/selectedOptions
         </script>
     </body>
