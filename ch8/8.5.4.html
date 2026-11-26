@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Exercise 8.5.4: Form validation</title>
+  <script type="text/javascript">
+      function CheckAndSubmit () {
+
+        let checknum = 0;
+
+        //uname length check
+        let uname_length = document.getElementById("userName").value.length;
+        if(uname_length>=5 && uname_length<=20){
+          console.log("uname_length ok");
+          checknum++
+        }else{alert("username format is incorrect!"); return false};
+        
+        //email check (ps   /^[^\s@]+@[^\s@]+\.[^\s@]+$/    is stolen from somewhere because glorb characters dont work apparantly )
+        let em = document.getElementById("email").value;
+        let checkmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if(em===checkmail){
+          console.log("email ok")
+          checknum++
+        }else{alert("email format is incorrect!"); return false};
+
+        //phone length check
+        let number = document.getElementById("phone").value.length;
+        if(number<=15 && number!=0){
+          console.log("phone length ok");
+          checknum++
+        }else{alert("phone number format is incorrect!"); return false};
+
+        //comment length check
+        let commentfield = document.getElementById("comment").value.length;
+        if(commentfield<=200 && commentfield!=0){
+          console.log("comment length ok");
+          checknum++
+        }else{alert("comment format is incorrect!"); return false};
+
+        //agreement check
+        let agreement = document.getElementById("acceptAgreement").checked;
+        if(agreement===true){
+          console.log("agreement ok")
+          checknum++
+        }else{alert("please agree to the agreement!"); return false};
+
+        
+
+
+        if(checknum===5){
+          return true;
+        }else{return false;}
+
+
+
+
+      }
+  </script>
+</head>
+<body>
+  <form id="regForm" method="post" action="#URL#" onsubmit="return CheckAndSubmit ()">
+      User Name: <input type="text" name="userName" id="userName" />
+      <br />
+      E-mail: <input type="email" name="email" id="email" />
+      <br />
+      Phone number: <input type="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" placeholder="676-76-767" name="phone" id="phone" />
+      <br /><br />
+      <input type="checkbox" name="acceptAgreement" id="acceptAgreement" /> 
+      <label for="acceptAgreement">I accept the User Agreement and Privacy Policy</label>
+      <br /><br />
+      <label for="comment">Comment:</label>
+      <textarea name="comment" id="comment"></textarea>
+      <br /><br />
+      <input type="submit" value="Register" />
+  </form>
+</body>

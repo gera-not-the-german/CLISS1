@@ -1,11 +1,12 @@
+<!DOCTYPE html>     
 <html>
     <head>
         <title>8.5.3 Exercise</title>
         
         <style type="text/css">
-            table
+            #table
             {
-                display: none;
+                    display: none;
             }
         </style>
     </head>
@@ -44,18 +45,31 @@
         
         function addStudent()
         {
-            document.getElementById("")
+            document.querySelector("head style").sheet.cssRules[0].style.display = "";
+            //i have no idea why this works and id doesnt but oh well </3
 
-            const newRow = document.getElementById("table").insertRow(-1);
-            const newCell = newRow.insertCell(0);
-            const newText = document.createTextNode("asdasdad0");
-            newCell.appendChild(newText);
-
-
+            const newRow = document.getElementById("table").insertRow(-1); // adds a row
+            const newCell = newRow.insertCell(0); // adds a cell to that row
 
             let n = document.getElementById("name").value;
             let a = document.getElementById("age").value;
             let g = document.getElementById("gender").value;
+
+            let gask;
+            if(g==="f" || g==="F"){
+                gask = "Female";
+            }
+            else if(g==="m" || g==="M"){
+                gask = "Male";
+            }
+            else if(g==="nb" || g==="NB" || g==="x" || g==="X"){
+                gask = "Non-binary";
+            }
+
+
+            newCell.appendChild(document.createTextNode(n+" - "));
+            newCell.appendChild(document.createTextNode(a+" - "));
+            newCell.appendChild(document.createTextNode(gask)); //for immages appendchild image src
 
 
 
